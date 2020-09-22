@@ -1,6 +1,7 @@
 import os
 import requests
 import time
+import sys
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -15,7 +16,7 @@ def index(request):
     for i in range(1, 100000000):
         sum = sum + i
     elapsed = time.time() - start
-    temp = HttpResponse('Hello! '+ str(elapsed))
+    temp = HttpResponse('Hello! '+ str(elapsed)+str(sys.version)+str(sys.version_info))
     return temp
 
 def db(request):
